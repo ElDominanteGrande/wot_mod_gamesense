@@ -1,0 +1,5 @@
+build/*
+WOT_mods_Ordner.lnk
+utils/config.py
+utils/*.pyc
+.vscode

@@ -1,0 +1,26 @@
+{
+    "pipeline_config":{
+        "wot_install_root": "C:\\Games\\World_of_Tanks_EU",
+        "wot_mod_subfolder": "mods",
+        "wot_cur_version": "1.10.0.4",
+        "deploy_wotmod": true,
+        "clear_python_log": true,
+        "meta_xml": "meta.xml"
+    },
+
+    "mod_config":{
+        "author": "ElDominanteGrande",
+        "id": "eldominantegrande.gamesense",
+        "version": "1.0.1",
+        "name": "wot_mod_gamesense",
+        "nameHR": "WoT mod GameSense",
+        "descr": "Enhance player experience by using SteelSeries GameSense capable devices.",
+        "ext": ".wotmod",
+        "meta_info":{
+            "comment_id": " Technical MOD ID ",
+            "comment_version": " Package version ",
+            "comment_name": " Human readable name ",
+            "comment_descr": " Human readable description "
+        }
+    }
+}
