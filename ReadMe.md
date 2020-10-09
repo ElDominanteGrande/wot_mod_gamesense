@@ -29,7 +29,7 @@ Build the .wotmod file by executing the following script using Python 2.7:
 <Repo-folder>\utils\build_mod.py
 ```
 
-Be sure to change the configration for the build according to your system (installation path of World of Tanks) and if you want to deploy the created .wotmod file instantly to your World of Tanks installation.
+Be sure to change the configuration for the build according to your system (installation path of World of Tanks) and if you want to deploy the created .wotmod file instantly to your World of Tanks installation.
 See configuration here:
 
 ```bash
@@ -38,11 +38,11 @@ See configuration here:
 
 Copy the built .wotmod file from the generated build folder to the mods folder of your World of Tanks installation path, if deploying was not done by the build step before.
 
-Start World of Tanks.
+Start World of Tanks. Load into a match or start a replay to let the mod register the GameSense events.
 
 Configure the registered GameSense events, the zones to be used and their colors in the SteelSeries Engine software (GUI).
 
-Load into a match and any hardware capable of GameSense should be displaying the configured events and states (e.g.: health, reload time and spotted indicator) on its LEDs.
+Any hardware capable of GameSense should be displaying the configured events and states (e.g.: health, reload time and spotted indicator) on its LEDs.
 
 ## Contributing
 
