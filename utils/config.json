@@ -11,7 +11,7 @@
     "mod_config":{
         "author": "ElDominanteGrande",
         "id": "eldominantegrande.gamesense",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "name": "wot_mod_gamesense",
         "nameHR": "WoT mod GameSense",
         "descr": "Enhance player experience by using SteelSeries GameSense capable devices.",

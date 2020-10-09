@@ -9,7 +9,7 @@ Config = {
         "credits": ["ElDominanteGrande"],
         "copyright": "Copyright 2020, ElDominanteGrande",
         "license": "MIT",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "email": "",
         "status": "Production"
     },
