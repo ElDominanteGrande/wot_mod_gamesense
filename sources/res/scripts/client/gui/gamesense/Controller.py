@@ -54,7 +54,7 @@ class Controller(object):
 
         # Initialize GameSense events
         if not self.CtrlState_isInitialized:
-            self.CtrlState_isInitialized
+            self.CtrlState_isInitialized = True
 
             # bind events
             steelseries_gamesense.bindHealthEvent(self.GameSense_Name, self.GameSense_DeviceType, self.GameSense_ZoneHealth, self.CtrlConfig_ClearOldGameSenseEvents)
@@ -127,10 +127,6 @@ class Controller(object):
             # update local values for further calculation
             self.CtrlState_prevTimestamp = currentTimeSec()
             self.CtrlState_prevTimeLeft = timeLeft
-
-        # Ignore new timeLeft value
-        # elif (currentTimeSec() - self.CtrlState_prevTimestamp) >= (self.CtrlState_prevTimeLeft - epsilon):
-        #    logger.logDebug("updateVehicleGunReloadTime called. | reload time left: ", timeLeft, " entire reload time: ", baseTime + " | Value of argument 'timeleft' ignored.")
 
         # Send new info to thread
         Threads.updateReloadIndicator.baseTime = baseTime

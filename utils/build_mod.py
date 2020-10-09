@@ -37,7 +37,7 @@ wotinstallpath = os.path.abspath(pipeline_config["wot_install_root"])
 
 def searchdirs(path, names):
     """
-    Scans recurseively path for dirs with the given names (tuple).
+    Scans recursively path for dirs with the given names (tuple).
     """
     foundDirs = []
 
