@@ -15,9 +15,6 @@ def updateReloadIndicator():
         updateReloadIndicator.timeLeft = 0.0
     if not hasattr(updateReloadIndicator, "baseTime"):
         updateReloadIndicator.baseTime = 1.0
-    
-    # localTimeLeft = timeLeftInit
-    # localbaseTime = baseTimeInit
 
     currentTimeSec = lambda: time.time()
     prevTime = currentTimeSec()
@@ -29,7 +26,7 @@ def updateReloadIndicator():
         if updateReloadIndicator.updateTimeLeft:
             updateReloadIndicator.updateTimeLeft = False
             localTimeLeft = updateReloadIndicator.timeLeft
-            # print(logPrefix, "updateReloadIndicator called. | Updated updateReloadIndicator.timeLeft: ", updateReloadIndicator.timeLeft, " | updateReloadIndicator.baseTime: ", updateReloadIndicator.baseTime, "| localTimeLeft: ", localTimeLeft, "| localbaseTime: ", localbaseTime)
+            logger.logDebug("updateReloadIndicator called. | Updated updateReloadIndicator.timeLeft: ", updateReloadIndicator.timeLeft, " | updateReloadIndicator.baseTime: ", updateReloadIndicator.baseTime, "| localTimeLeft: ", localTimeLeft)
 
         # Update baseTime value everytime
         localbaseTime = updateReloadIndicator.baseTime
@@ -37,7 +34,7 @@ def updateReloadIndicator():
         # Clip value between 0 and 100 for GameSense event
         value = min(max(0, 100-(((float)(localTimeLeft)/(float)(localbaseTime)) * 100)), 100)
 
-        # print(logPrefix, "updateReloadIndicator called. | updateReloadIndicator.timeLeft: ", localTimeLeft, "updateReloadIndicator.baseTime: ", localbaseTime, "value: ", value)
+        logger.logDebug("updateReloadIndicator called. | updateReloadIndicator.timeLeft: ", localTimeLeft, "updateReloadIndicator.baseTime: ", localbaseTime, "value: ", value)
 
         # Send event
         steelseries_gamesense.sendReloadEvent(GameSense_Name, value)
