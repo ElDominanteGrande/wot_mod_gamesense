@@ -8,7 +8,7 @@ class LOG_LEVEL(object):
     WARNING = 2
     INFO = 3
     TRACE = 4
-    DEBUG = 4
+    DEBUG = 5
 
 logPrefix = cfg["code_config"]["log_prefix"]
 logLevel = cfg["code_config"]["log_level"]
