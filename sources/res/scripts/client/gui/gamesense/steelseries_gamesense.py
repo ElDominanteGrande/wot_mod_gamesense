@@ -224,7 +224,7 @@ def bindGameEvent(game, event, min_value, max_value, icon_id, devicetype, zone, 
 
     response = requests.post(urlSteelseriesEngineBind, data = myEventBinder.getJson(), headers = dataHeader)
 
-    logger.logDebug("bindGameEvent called. | Response: ", response)
+    logger.logDebug("bindGameEvent called. | event: ", event, "Response: ", response)
 
 
 def sendGameEvent(game, event, value=None):
@@ -243,9 +243,12 @@ def readSteelseriesEnginePort():
     pathToProgramData = os.getenv("PROGRAMDATA")
     pathToSteelSeriesEngine = os.path.join(pathToProgramData, "SteelSeries", "SteelSeries Engine 3")
     pathToPortInfo = os.path.join(pathToSteelSeriesEngine,"coreProps.json")
+    logger.logDebug("readSteelseriesEnginePort called. | pathToPortInfo: ", pathToPortInfo)
 
     with open(pathToPortInfo) as portInfoFile:
-        return json.load(portInfoFile)
+        portInfo = json.load(portInfoFile)
+        logger.logDebug("readSteelseriesEnginePort called. | pathToPortInfo: ", pathToPortInfo)
+        return portInfo
 
 
 def removeEvent(game, event):
