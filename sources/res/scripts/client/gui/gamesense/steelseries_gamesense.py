@@ -240,14 +240,16 @@ def sendGameEvent(game, event, value=None):
 
 
 def readSteelseriesEnginePort():
+    readSteelseriesEnginePort.logged = False
     pathToProgramData = os.getenv("PROGRAMDATA")
     pathToSteelSeriesEngine = os.path.join(pathToProgramData, "SteelSeries", "SteelSeries Engine 3")
     pathToPortInfo = os.path.join(pathToSteelSeriesEngine,"coreProps.json")
-    logger.logDebug("readSteelseriesEnginePort called. | pathToPortInfo: ", pathToPortInfo)
 
     with open(pathToPortInfo) as portInfoFile:
         portInfo = json.load(portInfoFile)
-        logger.logDebug("readSteelseriesEnginePort called. | pathToPortInfo: ", pathToPortInfo)
+        if not readSteelseriesEnginePort.logged:
+            readSteelseriesEnginePort.logged = True
+            logger.logDebug("readSteelseriesEnginePort called. | pathToPortInfo: ", pathToPortInfo, " | PortInfo file found: ", os.path.isfile(pathToPortInfo), " | PortInfo: ", portInfo)
         return portInfo
 
 
