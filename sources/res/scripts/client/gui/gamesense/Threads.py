@@ -1,5 +1,6 @@
 import time
 import steelseries_gamesense
+import mod_gamesense_logger as logger
 
 GameSense_Name = ""
 
@@ -21,7 +22,7 @@ def updateReloadIndicator():
     currentTimeSec = lambda: time.time()
     prevTime = currentTimeSec()
 
-    # print(logPrefix, "updateReloadIndicator called.")
+    logger.logTrace("thread started: updateReloadIndicator.")
 
     while not updateReloadIndicator.terminate:
         # Only update the timeLeft value when told to do so.
@@ -45,7 +46,7 @@ def updateReloadIndicator():
         localTimeLeft = max(0, localTimeLeft - (currentTimeSec() - prevTime))
         prevTime = currentTimeSec()
 
-    # print(logPrefix, "updateReloadIndicator finished.")
+    logger.logTrace("thread finished: updateReloadIndicator.")
 
 
 def resetSpotIndicator():
@@ -65,7 +66,7 @@ def resetSpotIndicator():
         time.sleep(deltaSleep)
 
     steelseries_gamesense.sendSpotEvent(GameSense_Name, 0)
-    # print(logPrefix, "resetSpotIndicator finished.")
+    logger.logTrace("thread finished: resetSpotIndicator.")
 
 def keepGameSenseAlive():
 
@@ -77,4 +78,4 @@ def keepGameSenseAlive():
         steelseries_gamesense.sendHeartbeat(GameSense_Name)
         time.sleep(waitTime)
 
-    # print(logPrefix, "thread finished: keepGameSenseAlive.")
+    logger.logTrace("thread finished: keepGameSenseAlive.")
