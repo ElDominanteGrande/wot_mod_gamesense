@@ -55,6 +55,7 @@ class Controller(object):
         # Initialize GameSense events
         if not self.CtrlState_isInitialized:
             self.CtrlState_isInitialized = True
+            steelseries_gamesense.readSteelseriesEnginePort.logged = False
 
             # bind events
             steelseries_gamesense.bindHealthEvent(self.GameSense_Name, self.GameSense_DeviceType, self.GameSense_ZoneHealth, self.CtrlConfig_ClearOldGameSenseEvents)

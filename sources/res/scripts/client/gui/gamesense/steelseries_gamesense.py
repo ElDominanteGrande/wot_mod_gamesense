@@ -240,7 +240,6 @@ def sendGameEvent(game, event, value=None):
 
 
 def readSteelseriesEnginePort():
-    readSteelseriesEnginePort.logged = False
     pathToProgramData = os.getenv("PROGRAMDATA")
     pathToSteelSeriesEngine = os.path.join(pathToProgramData, "SteelSeries", "SteelSeries Engine 3")
     pathToPortInfo = os.path.join(pathToSteelSeriesEngine,"coreProps.json")
